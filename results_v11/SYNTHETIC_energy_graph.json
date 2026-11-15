@@ -1,0 +1,37 @@
+{
+  "selected": [
+    "H2_v0",
+    "H2_v1",
+    "H2_v2"
+  ],
+  "graph_importance": {
+    "H2_v0": 1.0,
+    "H2_v1": 0.7,
+    "H2_v2": 0.13999999999999999,
+    "dissociation": 0.06999999999999999
+  },
+  "integrated_electron_energy_eV_units": {
+    "H2_v0": 948188739736653.1,
+    "H2_v1": 316062913245551.06,
+    "H2_v2": 31606291324555.074,
+    "dissociation": 2831923702680.1357
+  },
+  "integrated_energy_loss_eV_units": {
+    "H2_v0": 948188739736653.1,
+    "H2_v1": 316062913245551.06,
+    "H2_v2": 31606291324555.074,
+    "dissociation": 2831923702680.1357
+  },
+  "integrated_energy_gain_eV_units": {
+    "H2_v0": 0.0,
+    "H2_v1": 0.0,
+    "H2_v2": 0.0,
+    "dissociation": 0.0
+  },
+  "retained_loss_fraction": 0.997819399556092,
+  "retained_gain_fraction": null,
+  "retained_energy_fraction": 0.997819399556092,
+  "net_energy_exchange_eV_units": 1298689868009439.5,
+  "energy_sign_convention": "positive=electron energy loss; negative=electron energy gain (superelastic)",
+  "status": "SCREENING_ONLY_NOT_VALIDATED_P_DRGEP"
+}

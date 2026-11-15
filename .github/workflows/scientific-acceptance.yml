@@ -1,0 +1,47 @@
+name: Scientific numerical-acceptance gate — Cantera reduction
+on:
+  workflow_dispatch:
+    inputs:
+      evaluation_protocol:
+        type: choice
+        description: 'Repository-pinned H2/O2 numerical evaluation plan'
+        options:
+          - v10_h2o2_default
+          - v10_h2o2_composition
+        default: v10_h2o2_default
+        required: true
+
+jobs:
+  require-real-reduction-and-ignition-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -e '.[test,cantera]'
+      - name: Verify evidence-integrity falsification tests before attempting chemistry
+        run: python -m pytest -q tests/test_v7_evidence_integrity.py tests/test_v8_scientific_hardening.py tests/test_v9_integrity_and_mixtures.py tests/test_v10_integrity.py tests/test_cantera_optional.py
+      - name: Verify pinned protocol hashes
+        run: |
+          python - <<'PYCODE'
+          from plasmarom.protocol import PINNED_PROTOCOLS,load_pinned_protocol
+          for name in PINNED_PROTOCOLS:
+              print(name,load_pinned_protocol(name)['sha256'])
+          PYCODE
+      - name: Run chemical reduction using committed fixed conditions
+        env:
+          PROTOCOL: ${{ inputs.evaluation_protocol }}
+        run: |
+          if [ "$PROTOCOL" = "v10_h2o2_composition" ]; then
+            python -m plasmarom skeletal --protocol "$PROTOCOL" --cases-file examples/cases/h2_composition_sweep.json --out gate-results
+          else
+            python -m plasmarom skeletal --protocol "$PROTOCOL" --out gate-results
+          fi
+      - name: Require kinetic reaction identity, source hash, and independent reactor replay
+        run: python -m plasmarom assess-skeletal --out gate-results
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: attempted-acceptance-evidence
+          path: gate-results/

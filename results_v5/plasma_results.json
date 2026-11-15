@@ -1,0 +1,17 @@
+{
+  "data_status": "SYNTHETIC CROSS SECTIONS; NOT PHYSICAL VALIDATION",
+  "provenance": "invented demonstration",
+  "levels_eV": [
+    0.0,
+    0.5159209294900446,
+    1.002661446372065
+  ],
+  "rate_coefficients_m3s": [
+    6.258905115274975e-15,
+    6.293774215255457e-15
+  ],
+  "max_population_sum_error": 3.774758283725532e-15,
+  "min_population": 0.0,
+  "relative_energy_closure": 3.702587393644773e-13,
+  "limitations": "Assumed Maxwell EEDF, no E/N or Poisson equation, no electron balance or calibrated plasma, no ignition chemistry"
+}

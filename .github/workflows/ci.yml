@@ -1,0 +1,49 @@
+name: PlasmaROM-H2 numerical regression checks (NOT physical certification)
+on: [push, pull_request]
+
+jobs:
+  numerical-unit-and-manufactured-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      matrix:
+        python-version: ['3.11','3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install -e '.[test]'
+      - name: Core unit and falsification tests
+        run: python -m pytest -q -m "not slow" --ignore=tests/test_cantera_optional.py
+      - name: Manufactured numerical and synthetic energy checks
+        run: |
+          python -m plasmarom verify --out ci-results
+          python -m plasmarom electron-energy --out ci-results
+          python -m plasmarom channel-reduce --out ci-results
+      - uses: actions/upload-artifact@v4
+        with:
+          name: synthetic-numerical-evidence-${{ matrix.python-version }}
+          path: ci-results/
+
+  cantera-integration-smoke-NOT-accepted-reduction:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -e '.[test,cantera]'
+      - name: Cantera integration tests (must import, not skip)
+        run: |
+          python -c 'import cantera; print("Cantera version", cantera.__version__)'
+          python -m pytest -q tests/test_cantera_optional.py tests/test_v8_scientific_hardening.py tests/test_v9_integrity_and_mixtures.py tests/test_v10_integrity.py -rs
+      - name: Attempt skeletal construction; do NOT claim holdout success
+        run: python -m plasmarom skeletal --mechanism h2o2.yaml --out ci-results
+      - name: Display explicit state
+        run: python -c 'import json; print("SCIENTIFIC STATUS:",json.load(open("ci-results/skeletal_summary.json"))["status"])'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cantera-prototype-NOT-necessarily-validated
+          path: ci-results/

@@ -1,0 +1,90 @@
+{
+  "model_status": "SURROGATE NUMERICAL DEMONSTRATOR; NOT A VALIDATED PAC SOLVER",
+  "verification": {
+    "advection": {
+      "observed_order": 0.9797023655522417,
+      "grid_errors": {
+        "16": 0.007177108014189357,
+        "32": 0.0036576458156266263,
+        "64": 0.001845482301653423
+      },
+      "max_mass_drift": 1.1102230246251565e-16
+    },
+    "diffusion": {
+      "observed_order": 1.9908856346097021,
+      "grid_errors": {
+        "16": 0.00010747052939215918,
+        "32": 2.71093974055384e-05,
+        "64": 6.802315955577233e-06
+      },
+      "max_mass_drift": 2.220446049250313e-16
+    }
+  },
+  "plasma": {
+    "data_status": "SYNTHETIC CROSS SECTIONS; NOT PHYSICAL VALIDATION",
+    "provenance": "invented demonstration",
+    "levels_eV": [
+      0.0,
+      0.5159209294900446,
+      1.002661446372065
+    ],
+    "rate_coefficients_m3s": [
+      6.258905115274975e-15,
+      6.293774215255457e-15
+    ],
+    "max_population_sum_error": 3.774758283725532e-15,
+    "min_population": 0.0,
+    "relative_energy_closure": 3.702587393644773e-13,
+    "limitations": "Assumed Maxwell EEDF, no E/N or Poisson equation, no electron balance or calibrated plasma, no ignition chemistry"
+  },
+  "thermal_surrogate": {
+    "model": "dimensionless coupled heat proxy, NOT thermochemical combustion",
+    "n": 32,
+    "t_end": 1.4,
+    "min_species": 2.548617140600542e-25,
+    "min_temperature_proxy": 0.021695297053935254,
+    "max_temperature_proxy": 0.026849110644982827,
+    "max_global_energy_proxy_drift": 0,
+    "max_total_species_drift": 8.881784197001252e-16
+  },
+  "lag_fit": {
+    "fitted_tau_dimensionless": 0.008361818410414138,
+    "train_objective_mse_sum": 9.786468442834027e-06,
+    "heldout": [
+      {
+        "pulse_strength": 2.5,
+        "pulse_width": 0.12,
+        "lag_max_abs_product_error": 0.002567312586704746,
+        "qssa_max_abs_product_error": 0.004291513270753833,
+        "lag_mass_drift": 6.922684647747701e-12,
+        "lag_min_population": 0.0
+      },
+      {
+        "pulse_strength": 6.0,
+        "pulse_width": 0.34,
+        "lag_max_abs_product_error": 0.01262065201536311,
+        "qssa_max_abs_product_error": 0.014409603762347345,
+        "lag_mass_drift": 5.439426686848492e-12,
+        "lag_min_population": 0.0
+      },
+      {
+        "pulse_strength": 0.8,
+        "pulse_width": 0.42,
+        "lag_max_abs_product_error": 0.0024320652434024967,
+        "qssa_max_abs_product_error": 0.0024615890382492234,
+        "lag_mass_drift": 4.168887457467463e-12,
+        "lag_min_population": 0.0
+      }
+    ],
+    "limitation": "Synthetic QSSA correction; no calibrated plasma and no claim of improved generalization"
+  },
+  "cantera_executed_in_this_report": false,
+  "not_established": [
+    "Experimental accuracy",
+    "EEDF / electric field",
+    "P-DRGEP",
+    "Real reacting CFD",
+    "DNS/LES",
+    "HPC scaling"
+  ]
+}

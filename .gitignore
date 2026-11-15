@@ -1,0 +1,27 @@
+# Python caches, environments, build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage*
+htmlcov/
+.venv/
+venv/
+build/
+dist/
+
+# Locally generated output; historical results_v* are intentionally committed
+/results/
+/results_local/
+/ci-results/
+/local-results/
+
+# Tools and editors
+.DS_Store
+.idea/
+.vscode/
+.env
+.env.*
+!.env.example

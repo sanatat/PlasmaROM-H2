@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plasmarom-h2"
+version = "0.12.0"
+description = "Numerical PAC research prototype with optional NH3/H2 Cantera and BOLOS integration, energy graph screening, and experimental-data audit"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26,<3", "scipy>=1.11,<2", "matplotlib>=3.8,<4"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+cantera = ["cantera>=3.2,<4"]
+boltzmann = ["bolos"]
+
+[tool.setuptools.packages.find]
+include = ["plasmarom*"]
+
+[tool.setuptools.package-data]
+plasmarom = ["protocols/*.json"]

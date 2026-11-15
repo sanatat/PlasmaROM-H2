@@ -1,0 +1,52 @@
+{
+  "fitted_tau_dimensionless": 0.008361818410414138,
+  "train_objective_mse_sum": 9.786468442834027e-06,
+  "validation": [
+    {
+      "pulse_strength": 0.8,
+      "pulse_width": 0.3,
+      "lag_error": 0.001713198360823058,
+      "qssa_error": 0.0016984148345179431
+    },
+    {
+      "pulse_strength": 2.0,
+      "pulse_width": 0.45,
+      "lag_error": 0.00728228610914837,
+      "qssa_error": 0.0076416166074251
+    }
+  ],
+  "selected_model_by_validation": "lag_fit",
+  "heldout": [
+    {
+      "pulse_strength": 2.5,
+      "pulse_width": 0.12,
+      "lag_max_abs_product_error": 0.002567312586704746,
+      "qssa_max_abs_product_error": 0.004291513270753833,
+      "selected_max_abs_product_error": 0.002567312586704746,
+      "selected_model": "lag_fit",
+      "lag_mass_drift": 6.922684647747701e-12,
+      "lag_min_population": 0.0
+    },
+    {
+      "pulse_strength": 6.0,
+      "pulse_width": 0.34,
+      "lag_max_abs_product_error": 0.01262065201536311,
+      "qssa_max_abs_product_error": 0.014409603762347345,
+      "selected_max_abs_product_error": 0.01262065201536311,
+      "selected_model": "lag_fit",
+      "lag_mass_drift": 5.439426686848492e-12,
+      "lag_min_population": 0.0
+    },
+    {
+      "pulse_strength": 0.8,
+      "pulse_width": 0.42,
+      "lag_max_abs_product_error": 0.0024320652434024967,
+      "qssa_max_abs_product_error": 0.0024615890382492234,
+      "selected_max_abs_product_error": 0.0024320652434024967,
+      "selected_model": "lag_fit",
+      "lag_mass_drift": 4.168887457467463e-12,
+      "lag_min_population": 0.0
+    }
+  ],
+  "limitation": "Synthetic QSSA correction; no calibrated plasma and no claim of improved generalization"
+}

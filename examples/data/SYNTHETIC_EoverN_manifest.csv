@@ -1,0 +1,3 @@
+EoverN_Td,eedf_csv,source
+50,SYNTHETIC_EEDF_field_50Td.csv,SYNTHETIC Maxwellian Te=1eV arbitrarily mapped to 50Td
+200,SYNTHETIC_EEDF_field_200Td.csv,SYNTHETIC Maxwellian Te=3eV arbitrarily mapped to 200Td

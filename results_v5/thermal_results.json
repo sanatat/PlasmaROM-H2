@@ -1,0 +1,10 @@
+{
+  "model": "dimensionless coupled heat proxy, NOT thermochemical combustion",
+  "n": 32,
+  "t_end": 1.4,
+  "min_species": 2.548617140600542e-25,
+  "min_temperature_proxy": 0.021695297053935254,
+  "max_temperature_proxy": 0.026849110644982827,
+  "max_global_energy_proxy_drift": 0,
+  "max_total_species_drift": 8.881784197001252e-16
+}

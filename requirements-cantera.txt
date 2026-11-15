@@ -1,0 +1,2 @@
+-r requirements.txt
+cantera>=3.2,<4

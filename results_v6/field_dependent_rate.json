@@ -1,0 +1,20 @@
+{
+  "EoverN_Td": 100.0,
+  "rate_coefficient_m3_s": 5.721486116504421e-15,
+  "source_eedf_fields": [
+    "SYNTHETIC Maxwellian Te=1eV arbitrarily mapped to 50Td",
+    "SYNTHETIC Maxwellian Te=3eV arbitrarily mapped to 200Td"
+  ],
+  "source_cross_section": "SYNTHETIC INVENTED CROSS SECTION - NOT MEASURED",
+  "all_field_values_Td": [
+    50.0,
+    200.0
+  ],
+  "eedf_sha256_by_field": {
+    "50.0": "b84e279b24b6b127ee14653cef49917ce668ce850815c8ef16f75c8763cfbca3",
+    "200.0": "a0e74f76f222fe482112b2624361b01b65aaae597301ff91ae9174dbb4accf69"
+  },
+  "cross_section_sha256": "b8dbaabcbab99945497b68037462454a4b50f4d70fc6d191585b6c7d488601bc",
+  "scientific_status": "Interpolated externally supplied EEDF only; NOT solved Boltzmann or validated PAC",
+  "interpolation": "log(E/N) linear blend of probability densities, no extrapolation"
+}

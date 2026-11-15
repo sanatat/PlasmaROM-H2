@@ -1,0 +1,10 @@
+s.ssss.................................................................. [ 49%]
+........................................................................ [ 99%]
+.                                                                        [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_cantera_optional.py:7: could not import 'cantera': No module named 'cantera'
+SKIPPED [1] tests/test_cantera_optional.py:28: could not import 'cantera': No module named 'cantera'
+SKIPPED [1] tests/test_cantera_optional.py:46: could not import 'cantera': No module named 'cantera'
+SKIPPED [1] tests/test_cantera_optional.py:61: could not import 'cantera': No module named 'cantera'
+SKIPPED [1] tests/test_cantera_optional.py:71: could not import 'cantera': No module named 'cantera'
+140 passed, 5 skipped in 27.95s

@@ -1,0 +1,63 @@
+{
+  "status": "HELDOUT_PASS",
+  "scientific_status": "synthetic 3-state energy-channel pruning; not P-DRGEP",
+  "retained_transitions": [
+    "v0<->v1"
+  ],
+  "removed_transitions": [
+    "v1<->v2"
+  ],
+  "channel_gross_excitation_energy_J_m3": {
+    "v0_to_v1": 1.96634689510513,
+    "v1_to_v2": 0.007930737915025418
+  },
+  "retained_energy_fraction": 0.9959829672471681,
+  "energy_selection_fraction_target": 0.995,
+  "allowed_max_normalized_error": 0.05,
+  "training_errors": [
+    {
+      "power_W_m3": 100.0,
+      "relative_max_Te_error": 6.240909358062874e-05,
+      "max_population_fraction_error": 2.745470394126606e-07,
+      "normalized_gas_heat_error": 6.978293671987268e-05
+    },
+    {
+      "power_W_m3": 3000.0,
+      "relative_max_Te_error": 0.00025358848056403205,
+      "max_population_fraction_error": 2.1552735439771785e-05,
+      "normalized_gas_heat_error": 0.0015372636358923781
+    },
+    {
+      "power_W_m3": 6000.0,
+      "relative_max_Te_error": 0.0008225684523170962,
+      "max_population_fraction_error": 8.211106386729616e-05,
+      "normalized_gas_heat_error": 0.002996250137034805
+    }
+  ],
+  "holdout_errors": [
+    {
+      "power_W_m3": 500.0,
+      "relative_max_Te_error": 6.417387861876178e-05,
+      "max_population_fraction_error": 8.474641863984124e-07,
+      "normalized_gas_heat_error": 0.00025274314901901906
+    },
+    {
+      "power_W_m3": 4500.0,
+      "relative_max_Te_error": 0.0004983457158389548,
+      "max_population_fraction_error": 4.7013470959274446e-05,
+      "normalized_gas_heat_error": 0.0022678877796295615
+    }
+  ],
+  "worst_training_error": 0.002996250137034805,
+  "worst_holdout_error": 0.0022678877796295615,
+  "training_powers_W_m3": [
+    100.0,
+    3000.0,
+    6000.0
+  ],
+  "holdout_powers_W_m3": [
+    500.0,
+    4500.0
+  ],
+  "warning": "No actual PAC or published P-DRGEP; only synthetic collision tables."
+}

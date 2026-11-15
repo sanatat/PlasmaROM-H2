@@ -1,0 +1,61 @@
+{
+  "project": "PlasmaROM-H2 v8",
+  "verification_date": "2026-11-15",
+  "verification": "synthetic unit tests only; real Cantera mechanism not locally verified",
+  "pytest": "112 passed, 3 skipped (Cantera), 0 failures; two scaling tests run separately",
+  "cantera_installed": false,
+  "maxwell_detailed_balance": [
+    {
+      "electron_temperature_eV": 1.0,
+      "excitation_m3_s": 3.174010856137384e-15,
+      "deexcitation_m3_s": 5.317041139911504e-15,
+      "expected_ratio": 1.675180514783142,
+      "observed_ratio": 1.675180514783142,
+      "ratio_relative_error": 0.0
+    },
+    {
+      "electron_temperature_eV": 2.0,
+      "excitation_m3_s": 6.258890805977453e-15,
+      "deexcitation_m3_s": 8.100805057982458e-15,
+      "expected_ratio": 1.294287647620552,
+      "observed_ratio": 1.294287647620552,
+      "ratio_relative_error": 0.0
+    },
+    {
+      "electron_temperature_eV": 5.0,
+      "excitation_m3_s": 1.0567862608707727e-14,
+      "deexcitation_m3_s": 1.1716542737267298e-14,
+      "expected_ratio": 1.1086955963652554,
+      "observed_ratio": 1.1086955963652556,
+      "ratio_relative_error": 2.220446049250313e-16
+    }
+  ],
+  "electron_energy": [
+    {
+      "input_power_W_m3": 0.0,
+      "relative_energy_error": 7.402744278683926e-09,
+      "max_population_sum_error": 6.661338147750939e-16,
+      "min_population": 0.0,
+      "last_electron_temperature_eV": 0.038076308849038724
+    },
+    {
+      "input_power_W_m3": 3000.0,
+      "relative_energy_error": 7.089471842913753e-09,
+      "max_population_sum_error": 4.440892098500626e-16,
+      "min_population": 0.0,
+      "last_electron_temperature_eV": 0.2946074257384337
+    }
+  ],
+  "synthetic_ignition_clock_test": {
+    "threshold_crossing_time_s": 3.857142857142857,
+    "peak_dTdt_time_s": 2.0,
+    "peak_dTdt_K_s": 6.5,
+    "max_time_step_s": 1.0,
+    "ignition_time_definition": "peak_dTdt_if_threshold_resolved",
+    "temperature_threshold_rise_K": 20.0,
+    "temperature_rise_K": 29.0,
+    "ignition_observed": true,
+    "ignition_time_s": 2.0,
+    "ignition_status": "observed_numerical_temperature_rise"
+  }
+}

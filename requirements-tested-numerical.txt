@@ -1,0 +1,7 @@
+# Versions present in the local numerical test environment, Python 3.13.5.
+# Reproduction aid, not a complete transitive dependency lock.
+numpy==2.3.5
+scipy==1.17.0
+matplotlib==3.10.8
+pytest==9.0.2
+# Optional real chemistry requires cantera>=3.2,<4 separately.

@@ -1,0 +1,20 @@
+{
+  "status": "single-process serial Python benchmark; NOT parallel or HPC scaling",
+  "results": [
+    {
+      "n": 16,
+      "cpu_run_seconds_median": 0.01412053499996091,
+      "repeats": 3
+    },
+    {
+      "n": 24,
+      "cpu_run_seconds_median": 0.01462441499995748,
+      "repeats": 3
+    },
+    {
+      "n": 32,
+      "cpu_run_seconds_median": 0.01802033699993899,
+      "repeats": 3
+    }
+  ]
+}

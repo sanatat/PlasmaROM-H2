@@ -1,0 +1,220 @@
+{
+  "model": "dimensionless illustrative hydrogen-equivalent excitation/oxidation; not real PAC",
+  "full_species": 5,
+  "qssa_species": 4,
+  "species_reduction_fraction": 0.2,
+  "max_abs_error_F0_B_R_P": [
+    0.003047318093233331,
+    0.0036373819580301503,
+    0.004990533183196762,
+    0.0027182226687806343
+  ],
+  "max_abs_reconstructed_state_errors_F0_F1_F2_R_P": [
+    0.003047318093233331,
+    0.012437217586151295,
+    0.01052163436828588,
+    0.004990533183196762,
+    0.0027182226687806343
+  ],
+  "mass_residual_full": 2.4136248555350903e-12,
+  "mass_residual_QSSA": 1.6689982729189978e-11,
+  "min_population_full": -8.863930720232807e-15,
+  "pca_explained_variance": [
+    0.8708583486922916,
+    0.1255027235720132,
+    0.0030434350703654905,
+    0.0005954926653297213,
+    6.939449087610418e-24
+  ],
+  "integrated_pathway_flux_ranking": [
+    [
+      "F0 -> F1 (plasma)",
+      1.4902591955700828
+    ],
+    [
+      "F1 -> F0 (relaxation)",
+      1.3741188896888916
+    ],
+    [
+      "F1 -> F2 (plasma)",
+      0.6827372956148733
+    ],
+    [
+      "F2 -> F1 (relaxation)",
+      0.5852033962612815
+    ],
+    [
+      "R -> P (oxidation)",
+      0.1923957023254428
+    ],
+    [
+      "F0 -> R (background)",
+      0.12243164221333086
+    ],
+    [
+      "F2 -> R (activated)",
+      0.09753389937688027
+    ],
+    [
+      "R -> F0 (quench)",
+      0.010359768586754614
+    ]
+  ],
+  "toy_drgep_and_energy_target_screening": {
+    "names": [
+      "H2(v0) proxy",
+      "H2(v1) proxy",
+      "H2(v2) proxy",
+      "Reactive pool",
+      "Converted pool"
+    ],
+    "chemical_importance": {
+      "H2(v0) proxy": 1.0,
+      "H2(v1) proxy": 0.9919892755784794,
+      "H2(v2) proxy": 0.8918527186163895,
+      "Reactive pool": 1.0,
+      "Converted pool": 1.0
+    },
+    "chemical_threshold": 0.95,
+    "chemical_selected": [
+      "H2(v0) proxy",
+      "H2(v1) proxy",
+      "Reactive pool",
+      "Converted pool"
+    ],
+    "energy_tolerance": 0.03,
+    "toy_energy_fractions": {
+      "F0->F1": 0.4211590714917215,
+      "F1->F2": 0.5788409285082785
+    },
+    "energy_guard_species": [
+      "H2(v0) proxy",
+      "H2(v1) proxy",
+      "H2(v2) proxy"
+    ],
+    "energy_aware_candidate": [
+      "H2(v0) proxy",
+      "H2(v1) proxy",
+      "H2(v2) proxy",
+      "Reactive pool",
+      "Converted pool"
+    ],
+    "warning": "Toy energy weights 1 and 3 are invented model units, not electron cross-section measurements. No validated skeletal mechanism or P-DRGEP is produced."
+  },
+  "learned_nonnegative_closure": {
+    "basis": "drive and drive squared",
+    "weights": [
+      0.24086337076530043,
+      0.0
+    ],
+    "training_residual_l2": 0.45486431838681507,
+    "training_cases": 6,
+    "heldout_cases": [
+      {
+        "pulse_strength": 2.5,
+        "pulse_width": 0.12,
+        "learned_max_abs_product_error": 0.003173047082287557,
+        "qssa_max_abs_product_error": 0.004291513270753833,
+        "learned_total_pool_residual": 5.8966165283891314e-12,
+        "learned_min_pool": 0.0
+      },
+      {
+        "pulse_strength": 6.0,
+        "pulse_width": 0.34,
+        "learned_max_abs_product_error": 0.086379405465144,
+        "qssa_max_abs_product_error": 0.014409603762347345,
+        "learned_total_pool_residual": 4.169997680492088e-12,
+        "learned_min_pool": 0.0
+      },
+      {
+        "pulse_strength": 0.8,
+        "pulse_width": 0.42,
+        "learned_max_abs_product_error": 0.007892791194471338,
+        "qssa_max_abs_product_error": 0.0024616604323209335,
+        "learned_total_pool_residual": 5.4569682106375694e-12,
+        "learned_min_pool": 0.0
+      }
+    ],
+    "warning": "Toy NNLS regression, not physics-informed neural networks or calibrated plasma kinetics."
+  },
+  "max_omitted_F2_population_full": 0.05408250426953806,
+  "validation_grid": [
+    {
+      "strength": 0.5,
+      "width": 0.2,
+      "MAE_R": 0.00019917041670810637,
+      "max_abs_R": 0.0012701775354028583,
+      "MAE_P": 0.00011552923164819054,
+      "max_abs_P": 0.0004485406212790498
+    },
+    {
+      "strength": 0.5,
+      "width": 0.34,
+      "MAE_R": 0.0003806160379973378,
+      "max_abs_R": 0.0017218320297202258,
+      "MAE_P": 0.00027889082436617527,
+      "max_abs_P": 0.0009301948859201346
+    },
+    {
+      "strength": 0.5,
+      "width": 0.55,
+      "MAE_R": 0.0005540514696673033,
+      "max_abs_R": 0.0019477229576057055,
+      "MAE_P": 0.0005901560016915953,
+      "max_abs_P": 0.0015668512206465993
+    },
+    {
+      "strength": 1.0,
+      "width": 0.2,
+      "MAE_R": 0.0006664018039622223,
+      "max_abs_R": 0.003980808541499337,
+      "MAE_P": 0.0004117576826487228,
+      "max_abs_P": 0.0014113201479816276
+    },
+    {
+      "strength": 1.0,
+      "width": 0.34,
+      "MAE_R": 0.0011535070128563599,
+      "max_abs_R": 0.004990533183196762,
+      "MAE_P": 0.0008224466432343934,
+      "max_abs_P": 0.0027182226687806343
+    },
+    {
+      "strength": 1.0,
+      "width": 0.55,
+      "MAE_R": 0.0015121363860873035,
+      "max_abs_R": 0.005192753594703163,
+      "MAE_P": 0.0015345015368040027,
+      "max_abs_P": 0.004205418671458704
+    },
+    {
+      "strength": 1.5,
+      "width": 0.2,
+      "MAE_R": 0.001264833034086901,
+      "max_abs_R": 0.007120888110173827,
+      "MAE_P": 0.0009177460678895969,
+      "max_abs_P": 0.002532212147700448
+    },
+    {
+      "strength": 1.5,
+      "width": 0.34,
+      "MAE_R": 0.0020096606350147343,
+      "max_abs_R": 0.008349874658587518,
+      "MAE_P": 0.0014662020951743031,
+      "max_abs_P": 0.004576411743197763
+    },
+    {
+      "strength": 1.5,
+      "width": 0.55,
+      "MAE_R": 0.0024205309055836113,
+      "max_abs_R": 0.008169199471350606,
+      "MAE_P": 0.0024355393494418435,
+      "max_abs_P": 0.006618566185621913
+    }
+  ],
+  "runtimes": {
+    "full_seconds_median": 0.06937464349994116,
+    "QSSA_seconds_median": 0.05483293500003583
+  },
+  "runtime_warning": "Small systems may not speed up under Python/SciPy overhead; do not infer industrial speedup."
+}

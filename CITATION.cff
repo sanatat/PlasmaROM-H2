@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this educational computational prototype, cite its title, version and author; no external repository DOI is claimed."
+title: "PlasmaROM-H2: plasma-inspired excitation/reduction and reactive-flow demonstrator"
+version: 0.12.0
+date-released: 2026-11-15
+authors:
+  - family-names: Tat
+    given-names: Sana

@@ -1,0 +1,11 @@
+{
+  "status": "VERIFIED_1D_SCALAR_REACTIVE_TRANSPORT_NOT_CFD_DNS_LES",
+  "max_mass_fraction_sum_error": 2.220446049250313e-16,
+  "global_mass_drift": 1.1102230246251565e-16,
+  "global_total_enthalpy_drift_J_kg": 0.0,
+  "steps": 5,
+  "dx_m": 0.01,
+  "dt_s": 0.004,
+  "mean_product_B": 0.808906714466564,
+  "max_temperature_K": 639.1078465108535
+}

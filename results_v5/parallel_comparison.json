@@ -1,0 +1,16 @@
+{
+  "status": "local CPU process-pool task-parallel demonstration, NOT HPC scaling",
+  "powers_W_m3": [
+    100.0,
+    500.0,
+    1000.0,
+    3000.0
+  ],
+  "worker_processes": 2,
+  "serial_wall_s": 1.5789940919999026,
+  "parallel_wall_s": 2.0293734020001466,
+  "measured_speedup": 0.7780697679607158,
+  "max_absolute_serial_parallel_difference": 0.0,
+  "repetitions": 1,
+  "warning": "Do not extrapolate one-run walltime to HPC performance."
+}

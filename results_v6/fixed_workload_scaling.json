@@ -1,0 +1,31 @@
+{
+  "kind": "local fixed-workload independent-task scaling, NOT solver HPC scaling",
+  "workload_powers_W_m3": [
+    100.0,
+    500.0,
+    1000.0,
+    3000.0
+  ],
+  "repetitions": 2,
+  "by_workers": {
+    "1": {
+      "median_wall_s": 1.5245643244998064,
+      "wall_times_s": [
+        1.547141093999926,
+        1.5019875549996868
+      ],
+      "speedup_vs_serial": 1.0,
+      "parallel_efficiency": 1.0
+    },
+    "2": {
+      "median_wall_s": 2.271714093000128,
+      "wall_times_s": [
+        2.4024862730002496,
+        2.140941913000006
+      ],
+      "speedup_vs_serial": 0.6711074818778794,
+      "parallel_efficiency": 0.3355537409389397
+    }
+  },
+  "warning": "Timing not portable. No MPI, GPU, CFD scaling or weak-scaling assessment."
+}

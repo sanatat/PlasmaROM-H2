@@ -1,0 +1,55 @@
+name: v12 Cantera real chemistry integration (not experimental certification)
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'plasmarom/**'
+      - 'examples/**'
+      - 'tests/**'
+      - 'protocols/**'
+      - 'pyproject.toml'
+      - 'requirements*.txt'
+      - 'run_verified_pipeline.sh'
+      - '.github/workflows/v12-real-chemistry.yml'
+  pull_request:
+    paths:
+      - 'plasmarom/**'
+      - 'examples/**'
+      - 'tests/**'
+      - 'protocols/**'
+      - 'pyproject.toml'
+      - 'requirements*.txt'
+      - 'run_verified_pipeline.sh'
+      - '.github/workflows/v12-real-chemistry.yml'
+jobs:
+  real_chemistry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -e '.[test,cantera]'
+      - name: Require Cantera (not skip)
+        run: |
+          python - <<'PYCODE'
+          import cantera as ct
+          print('Cantera',ct.__version__)
+          gas=ct.Solution('example_data/ammonia-CO-H2-Alzueta-2023.yaml','baseline')
+          assert 'NH3' in gas.species_names and 'H2' in gas.species_names
+          print('REAL chemistry loaded:',gas.n_species,'species',gas.n_reactions,'reactions')
+          PYCODE
+      - name: Verify v12 regression tests before integration
+        run: python -m pytest -q tests/test_v12_regressions.py
+      - name: Run real NH3/H2 nonplasma reactor
+        run: python examples/run_ammonia_h2_v11.py
+      - name: Run actual two-term Boltzmann EEDF (Phelps data; N2/O2)
+        run: python examples/run_cantera_boltzmann_v11.py
+      - name: Run Cantera integration suite
+        run: python -m pytest -q tests/test_cantera_optional.py -rs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v12-real-chemistry-results-not-experimentally-validated
+          path: results_v11/

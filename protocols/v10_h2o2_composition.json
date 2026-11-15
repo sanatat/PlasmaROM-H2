@@ -1,0 +1,13 @@
+{
+  "id": "v10_h2o2_composition",
+  "scope": "homogeneous adiabatic H2/O2 composition sweep; no plasma validation",
+  "source_mechanism": "h2o2.yaml",
+  "training": [[1100.0, 1.0, "H2:2,O2:1,N2:4"], [1250.0, 2.0, "H2:1.5,O2:1,N2:4"], [1450.0, 1.0, "H2:2.5,O2:1,N2:6"]],
+  "holdout": [[1350.0, 3.0, "H2:1.7,O2:1,N2:5"], [1500.0, 1.5, "H2:2.2,O2:1,N2:4.5"]],
+  "reactor_t_end_s": 0.006,
+  "reactor_n_snapshots": 80,
+  "thresholds": [0.4, 0.2, 0.1, 0.05],
+  "train_tolerance": 0.10,
+  "holdout_tolerance": 0.12,
+  "oh_mass_fraction_relative_floor": 1e-12
+}

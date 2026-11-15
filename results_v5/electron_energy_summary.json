@@ -1,0 +1,12 @@
+{
+  "max_abs_energy_error_J_m3": 7.0894728629311565e-09,
+  "relative_energy_error": 7.0894728629311565e-09,
+  "max_population_sum_error": 9.992007221626409e-16,
+  "min_population": 0.0,
+  "status": "Maxwellian electron-energy ODE; fixed ne and gas bath; no discharge",
+  "cross_sections": "synthetic",
+  "initial_Te_eV": 2.0,
+  "final_Te_eV": 0.2946080555972503,
+  "max_Te_eV": 2.0,
+  "total_power_deposited_J_m3": 0.6000000000000001
+}

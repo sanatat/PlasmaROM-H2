@@ -1,0 +1,9 @@
+s.s..................................................................... [ 91%]
+.......                                                                  [100%]
+============================= slowest 5 durations ==============================
+6.46s call     tests/test_v6_scaling.py::test_repeated_scaling_is_numerically_reproducible
+3.91s call     tests/test_v5_improvements.py::test_synthetic_channel_pruning_meets_heldout_error
+3.73s call     tests/test_v5_improvements.py::test_requested_unrealistic_energy_fraction_refuses_pruning
+3.37s call     tests/test_v6_ml_fallback.py::test_validation_only_selects_model_without_holdout_leakage
+2.73s call     tests/test_v5_improvements.py::test_local_multicore_results_match_serial
+77 passed, 2 skipped in 29.54s

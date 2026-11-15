@@ -1,0 +1,72 @@
+{
+  "advection": {
+    "rows": [
+      {
+        "n": 16,
+        "mode": "advection",
+        "t_end": 0.35,
+        "steps": 60,
+        "dt": 0.005833333333333333,
+        "l2_error": 0.007177108014189357,
+        "max_abs_error": 0.014308209201303823,
+        "mass_relative_error": 1.1102230246251565e-16
+      },
+      {
+        "n": 32,
+        "mode": "advection",
+        "t_end": 0.35,
+        "steps": 119,
+        "dt": 0.0029411764705882353,
+        "l2_error": 0.0036576458156266263,
+        "max_abs_error": 0.007313868842606874,
+        "mass_relative_error": 0.0
+      },
+      {
+        "n": 64,
+        "mode": "advection",
+        "t_end": 0.35,
+        "steps": 238,
+        "dt": 0.0014705882352941176,
+        "l2_error": 0.001845482301653423,
+        "max_abs_error": 0.0036907321852316932,
+        "mass_relative_error": 0.0
+      }
+    ],
+    "observed_order": 0.9797023655522417
+  },
+  "diffusion": {
+    "rows": [
+      {
+        "n": 16,
+        "mode": "diffusion",
+        "t_end": 0.35,
+        "steps": 289,
+        "dt": 0.0012110726643598615,
+        "l2_error": 0.00010747052939215918,
+        "max_abs_error": 0.00021494105878422376,
+        "mass_relative_error": 0.0
+      },
+      {
+        "n": 32,
+        "mode": "diffusion",
+        "t_end": 0.35,
+        "steps": 2312,
+        "dt": 0.0001513840830449827,
+        "l2_error": 2.71093974055384e-05,
+        "max_abs_error": 5.42187948116557e-05,
+        "mass_relative_error": 2.220446049250313e-16
+      },
+      {
+        "n": 64,
+        "mode": "diffusion",
+        "t_end": 0.35,
+        "steps": 18495,
+        "dt": 1.8924033522573667e-05,
+        "l2_error": 6.802315955577233e-06,
+        "max_abs_error": 1.360463191291128e-05,
+        "mass_relative_error": 2.220446049250313e-16
+      }
+    ],
+    "observed_order": 1.9908856346097021
+  }
+}
